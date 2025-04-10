@@ -9,8 +9,8 @@ import gsap from 'gsap';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 4;
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#canvas'),
   antialias: true,
