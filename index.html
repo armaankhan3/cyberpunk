@@ -18,18 +18,37 @@
         0 0 30px rgba(251, 191, 36, 5);
       transition: all 0.1s ease;
     }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 30;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body class="bg-black">
   <div class="relative w-full h-screen">
-    <img class="object-cover h-full" src="https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-vibrant-sci-fi-futuristic-laser-lights-in-neon-yellow-illuminating-grunge-image_13588372.png" alt="">
-    <nav class="absolute top-0 left-0 w-full px-10 py-10 z-20">
+    <img class="object-cover h-full w-screen" src="https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-vibrant-sci-fi-futuristic-laser-lights-in-neon-yellow-illuminating-grunge-image_13588372.png" alt="">
+    <nav class="absolute top-0 left-0 w-full px-6 py-6 md:px-10 md:py-10 z-20">
       <div class="container mx-auto flex items-center justify-between">
         <div class="flex items-center">
           <img 
             src="https://cdn2.steamgriddb.com/logo/948faabaf3fde10e3263eee10d22441b.png" 
             alt="Logo" 
-            class="h-12 w-auto"
+            class="h-8 md:h-12 w-auto"
           >
         </div>
         <div class="hidden md:flex items-center space-x-8 font-mono font-semibold">
@@ -39,16 +58,28 @@
           <a href="#" class="text-white hover-glow">PROJECTS</a>
           <a href="#" class="text-white hover-glow">CONTACT</a>
         </div>
-        <button class="md:hidden text-white">
+        <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('active')">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="flex flex-col space-y-6 font-mono font-semibold text-lg">
+        <a href="#" class="text-white hover-glow">HOME</a>
+        <a href="#" class="text-white hover-glow">GAMES</a>
+        <a href="#" class="text-white hover-glow">ABOUT</a>
+        <a href="#" class="text-white hover-glow">PROJECTS</a>
+        <a href="#" class="text-white hover-glow">CONTACT</a>
+      </div>
+    </div>
+
     <canvas id="canvas" class="absolute inset-0 w-full h-full"></canvas>
     <img 
-      class="absolute w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover z-10 mix-blend-lighten" 
+      class="absolute w-3/4 md:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover z-10 mix-blend-lighten" 
       src="https://cdn2.steamgriddb.com/logo/948faabaf3fde10e3263eee10d22441b.png" 
       alt="Logo"
     >
