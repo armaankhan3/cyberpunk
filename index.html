@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hover-glow:hover {
+      color: #fef08a;
+      text-shadow: 
+        0 0 10px rgba(251, 191, 36, 6),
+        0 0 20px rgba(251, 191, 36, 7),
+        0 0 30px rgba(251, 191, 36, 5);
+      transition: all 0.1s ease;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <div class="relative w-full h-screen">
+    <nav class="absolute top-0 left-0 w-full px-10 py-10 z-20">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center">
+          <img 
+            src="https://cdn2.steamgriddb.com/logo/948faabaf3fde10e3263eee10d22441b.png" 
+            alt="Logo" 
+            class="h-12 w-auto"
+          >
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-white hover-glow">Home</a>
+          <a href="#" class="text-white hover-glow">About</a>
+          <a href="#" class="text-white hover-glow">Projects</a>
+          <a href="#" class="text-white hover-glow">Contact</a>
+        </div>
+        <button class="md:hidden text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <canvas id="canvas" class="absolute inset-0 w-full h-full"></canvas>
+    <img 
+      class="absolute w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover z-10 mix-blend-lighten" 
+      src="https://cdn2.steamgriddb.com/logo/948faabaf3fde10e3263eee10d22441b.png" 
+      alt="Logo"
+    >
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
